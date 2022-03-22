@@ -9,7 +9,8 @@ import Close from '../svg/close.svg';
 
 const NavBar = () => {
     const [showSideBar, setShowSideBar] = React.useState(false);
-    const changeShowSideBar = () => setShowSideBar(!showSideBar)
+    const changeShowSideBar = () => setShowSideBar(!showSideBar);
+
 
     return (
         <div>
@@ -31,7 +32,16 @@ const NavBar = () => {
                             <button className="sidebar-button">Mijn Profiel</button>
                         </div>
                         <button className="sidebar-button">Mijn bord</button>
-                        <button className="sidebar-button">MVO wegwijzer</button>
+                        <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/"><button className="sidebar-button">MVO wegwijzer</button></a>
+                        <div className="mvo-links-wrapper">
+                            <div className="mvo-links-content">
+                                <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/focus-bepalen-mvo/">Focus bepalen</a>
+                                <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/mvo-doelen-stellen/">MVO-doelen stellen</a>
+                                <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/maatregelen-mvo/">Maatregelen uitvoeren</a>
+                                <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/monitoren-mvo/">Monitoren van de voortgang</a>
+                                <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/communiceren-mvo/">Communiceren over MVO</a>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </CSSTransition>
