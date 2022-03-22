@@ -1,0 +1,32 @@
+:root {
+    --default-border-width: 8px;
+}
+
+.nav-wrapper {
+    width: 100vw;
+    background: var(--main);
+    border-bottom: var(--secondary) var(--default-border-width) solid;
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+
+.dropdown {
+    width: 40px;
+    cursor: pointer;
+}
+
+.side-nav-wrapper {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: var(--main);
+    border-bottom: var(--secondary) var(--default-border-width) solid;
+    height: calc(100vh - var(--default-border-width));
+    width: 300px;
+    z-index: 9999;
+}
