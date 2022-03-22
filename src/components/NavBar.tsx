@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import '../styles/NavBar.css';
 
 // Images
@@ -6,7 +6,7 @@ import Logo from '../img/logo.png';
 import Dropdown from '../svg/dropdown.svg';
 
 const NavBar = () => {
-
+    
     return (
         <div>
             <div className="nav-wrapper">
@@ -15,11 +15,11 @@ const NavBar = () => {
                     <img className="dropdown" src={Dropdown} />
                 </div>
             </div>
-            <div className="side-nav-wrapper">
+            <div className="sidebar-nav-wrapper">
                 <nav>
-                    <p>Mijn board</p>
-                    <p>Mijn profiel</p>
-                    <p>MVO wegwijzer</p>
+                    <button className="sidebar-button">Mijn bord</button>
+                    <button className="sidebar-button">Mijn Profiel</button>
+                    <button className="sidebar-button">MVO wegwijzer</button>
                 </nav>
             </div>
         </div>
