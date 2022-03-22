@@ -106,3 +106,26 @@
     color: var(--custom-red);
     transition: color 200ms;
 }
+
+@media screen and (max-width: 480px) {
+    .sidebar-enter {
+        width: 0;
+    }
+    .sidebar-enter-active {
+        width: 100%;
+        transition: width 300ms;
+    }
+    .sidebar-enter-done {
+        width: 100%;
+    }
+    .sidebar-exit {
+        width: 100%;
+    }
+    .sidebar-exit-active {
+        width: 0;
+        transition: width 300ms;
+    }
+    .sidebar-exit-done {
+        width: 0;
+    }
+}
