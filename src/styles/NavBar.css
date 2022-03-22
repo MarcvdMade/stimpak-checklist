@@ -16,8 +16,19 @@
 }
 
 .dropdown {
-    width: 40px;
+    width: 35px;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.close {
+    width: 35px;
+    cursor: pointer;
+    text-align: right;
+    padding: 5px;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .sidebar-nav-wrapper {
@@ -27,8 +38,27 @@
     background: var(--main);
     border-bottom: var(--secondary) var(--default-border-width) solid;
     height: calc(100vh - var(--default-border-width));
-    width: 300px;
     z-index: 9999;
+}
+.sidebar-enter {
+    width: 0;
+}
+.sidebar-enter-active {
+    width: 350px;
+    transition: width 300ms;
+}
+.sidebar-enter-done {
+    width: 350px;
+}
+.sidebar-exit {
+    width: 350px;
+}
+.sidebar-exit-active {
+    width: 0;
+    transition: width 300ms;
+}
+.sidebar-exit-done {
+    width: 0;
 }
 
 .sidebar-button {
@@ -41,4 +71,5 @@
     background-color: transparent;
     color: var(--custom-white);
     cursor: pointer;
+    font-weight: 600;
 }
