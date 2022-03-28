@@ -16,17 +16,116 @@
 }
 
 .dropdown {
-    width: 40px;
+    width: 35px;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-.side-nav-wrapper {
+.close {
+    width: 35px;
+    cursor: pointer;
+    text-align: right;
+    padding: 5px;
+    user-select: none;
+    -webkit-user-drag: none;
+    fill: var(--custom-white);
+}
+
+.sidebar-nav-wrapper {
     position: fixed;
     right: 0;
     top: 0;
     background: var(--main);
     border-bottom: var(--secondary) var(--default-border-width) solid;
     height: calc(100vh - var(--default-border-width));
-    width: 300px;
     z-index: 9999;
+    width: 0;
+}
+.sidebar-enter {
+    width: 0;
+}
+.sidebar-enter-active {
+    width: 350px;
+    transition: width 300ms;
+}
+.sidebar-enter-done {
+    width: 350px;
+}
+.sidebar-exit {
+    width: 350px;
+}
+.sidebar-exit-active {
+    width: 0;
+    transition: width 300ms;
+}
+.sidebar-exit-done {
+    width: 0;
+}
+
+.sidebar-button {
+    width: 100%;
+    padding: 20px 0;
+    border: none;
+    border-bottom: var(--secondary) 2px solid;
+    text-align: center;
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--custom-white);
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 200ms;
+}
+.sidebar-button:hover {
+    color: var(--custom-red);
+    transition: color 200ms;
+}
+
+.mvo-links-wrapper {
+    width: 100%;
+    border-bottom: none;
+    text-align: center;
+    border-bottom: var(--secondary) 2px solid;
+}
+
+.mvo-links-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 0;
+    gap: 30px;
+}
+
+.mvo-links-wrapper a {
+    color: var(--custom-white);
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 200ms;
+}
+.mvo-links-wrapper a:hover {
+    color: var(--custom-red);
+    transition: color 200ms;
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar-enter {
+        width: 0;
+    }
+    .sidebar-enter-active {
+        width: 100%;
+        transition: width 300ms;
+    }
+    .sidebar-enter-done {
+        width: 100%;
+    }
+    .sidebar-exit {
+        width: 100%;
+    }
+    .sidebar-exit-active {
+        width: 0;
+        transition: width 300ms;
+    }
+    .sidebar-exit-done {
+        width: 0;
+    }
 }
