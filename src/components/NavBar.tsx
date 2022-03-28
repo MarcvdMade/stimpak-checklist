@@ -6,6 +6,7 @@ import '../styles/NavBar.css';
 import Logo from '../img/logo.png';
 import Dropdown from '../svg/dropdown.svg';
 import Close from '../svg/close.svg';
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
     const [showSideBar, setShowSideBar] = React.useState(false);
@@ -29,7 +30,7 @@ const NavBar = () => {
                     <img className="close" onClick={changeShowSideBar} src={Close} alt="close menu" />
                     <nav>
                         <div>
-                            <button className="sidebar-button">Mijn Profiel</button>
+                            <Link to="/auth" className="sidebar-button">Mijn Profiel</Link>
                         </div>
                         <button className="sidebar-button">Mijn bord</button>
                         <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/"><button className="sidebar-button">MVO wegwijzer</button></a>
