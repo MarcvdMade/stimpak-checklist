@@ -11,6 +11,7 @@ import Auth from "./Auth";
 function App() {
   return (
     <BrowserRouter>
+        <NavBar/>
         <Routes>
             <Route index element={<Home />} />
             <Route path="auth" element={<Auth />} />
