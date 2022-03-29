@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/mvocheck.iml" filepath="$PROJECT_DIR$/.idea/mvocheck.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/stimpak-checklist.iml" filepath="$PROJECT_DIR$/.idea/stimpak-checklist.iml" />
     </modules>
   </component>
 </project>
