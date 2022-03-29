@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
+import "./styles/Buttons.css"
+import "./styles/Spacing.css"
 import './styles/colors.css';
 
 // Components
-import NavBar from './components/NavBar';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from './Home';
 import Auth from "./Auth";
