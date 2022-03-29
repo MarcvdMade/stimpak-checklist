@@ -30,7 +30,7 @@ const NavBar = () => {
                     <img className="close" onClick={changeShowSideBar} src={Close} alt="close menu" />
                     <nav>
                         <div>
-                            <Link to="/auth" className="sidebar-button">Mijn Profiel</Link>
+                            <Link to="/auth"><button className="sidebar-button">Mijn Profiel</button></Link>
                         </div>
                         <button className="sidebar-button">Mijn bord</button>
                         <a href="https://www.stimular.nl/doe-het-zelf/mvo/wegwijzer-mvo/"><button className="sidebar-button">MVO wegwijzer</button></a>
