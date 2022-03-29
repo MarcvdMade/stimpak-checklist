@@ -41,6 +41,8 @@
     height: calc(100vh - var(--default-border-width));
     z-index: 9999;
     width: 0;
+    word-break: none;
+    white-space: nowrap;
 }
 .sidebar-enter {
     width: 0;

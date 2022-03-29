@@ -3,3 +3,7 @@ html, body {
   padding: 0;
   background: var(--custom-white);
 }
+
+#logo {
+  width: 150px;
+}
