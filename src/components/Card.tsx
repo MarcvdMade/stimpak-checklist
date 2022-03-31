@@ -5,31 +5,34 @@ import "../styles/Card.css"
 import {Box, LinearProgress, LinearProgressProps, Typography} from "@mui/material";
 
 const Card = () => {
-    const [progress, setProgress] = useState(10)
+    const [progress, setProgress] = useState(60)
+    const [seeMore, setSeeMore] = useState(false)
 
     const openModal = () => {
         console.log("OPEN")
     }
 
     return (
-        <div className="card" id="card">
+        <div className="card" id="card" onClick={openModal}>
             <div className="card-header">
                 <span>1. Geen honger</span>
                 <img src={geenHonger} alt="rover"/>
             </div>
             <div className="card-body">
-                <h5 className="text-center mb-3">
-                    Betaal je werknemers een salaris om van te leven
-                </h5>
-                <p className="text-center">
-                    Zorg dat 100 werknemers niet naar de voedselbank hoeven.
-                </p>
+                <div className="d-flex justify-content-center">
+                    <h5 style={{marginBottom: 20}}>
+                        Betaal je werknemers goed
+                    </h5>
+                </div>
+                {
+                    seeMore ?
+                        <p className="text-center">
+                            Zorg dat 100 werknemers niet naar de voedselbank hoeven.
+                        </p> : <></>
+                }
                 <Box sx={{width: '100%'}}>
                     <LinearProgressWithLabel color="success" value={progress}/>
                 </Box>
-            </div>
-            <div className="d-flex justify-content-center mb-2">
-                <button className="btn warning seeMore" onClick={openModal}>See more</button>
             </div>
         </div>
     )

@@ -6,8 +6,8 @@ import './styles/colors.css';
 
 // Components
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Home from './Home';
-import Auth from "./Auth";
+import Home from './Pages/Home';
+import Auth from "./Pages/Auth";
 
 function App() {
   return (
