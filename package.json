@@ -24,6 +24,7 @@
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "react-transition-group": "^4.4.2",
+    "react-router-dom": "^6.2.2",
     "typescript": "^4.6.2",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
@@ -32,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-types": "./scripts/generate-types.sh"
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +56,6 @@
   },
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.1.2",
-    "@types/uuid": "^8.3.4",
-    "react-router-dom": "^6.2.2"
+    "@types/uuid": "^8.3.4"
   }
 }
