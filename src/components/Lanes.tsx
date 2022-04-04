@@ -75,8 +75,8 @@ const onDragEnd = (result: DropResult, taskColumns: { [p: string]: any }, setTas
 
 const Lanes = () => {
     function getStyle(style: DraggingStyle | NotDraggingStyle | undefined, snapshot: DraggableStateSnapshot) {
+
         if (snapshot.isDropAnimating && snapshot.draggingOver === "finish") {
-            console.log(style)
             confetti({
                 particleCount: 100,
                 angle: 60,
@@ -102,7 +102,7 @@ const Lanes = () => {
                 {Object.entries(taskColumns).map(([columnId, column], index) => {
                     return (
                         <div className="column-wrap" key={columnId}>
-                            <h2>{column.name}</h2>
+                            <h2 className="main-color">{column.name}</h2>
                             <div style={{margin: 8}}>
                                 <Droppable droppableId={columnId} key={columnId}>
                                     {(provided, snapshot) => {
@@ -139,6 +139,7 @@ const Lanes = () => {
                                                                             title={item?.item.title}
                                                                             body={item?.item?.body}
                                                                             value={item?.item?.value}
+                                                                            tasks={item?.item?.tasks}
                                                                         />
                                                                     </div>
                                                                 );
