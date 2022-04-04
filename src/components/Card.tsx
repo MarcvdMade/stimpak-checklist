@@ -53,4 +53,12 @@ function LinearProgressWithLabel(props: LinearProgressProps & { value: number })
     );
 }
 
+interface Card {
+    headerTitle: String,
+    headerImgPath: String,
+    title: String,
+    body: String,
+    value: Number
+}
+
 export default Card;

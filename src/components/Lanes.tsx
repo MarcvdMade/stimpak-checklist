@@ -8,30 +8,31 @@ const itemsFromBackend = [
     { id: uuid() },
     { id: uuid() },
     { id: uuid() },
-    { id: uuid()},
     { id: uuid() },
     { id: uuid() },
-    { id: uuid()},
-    { id: uuid() }
 ];
 
 const columnsFromBackend = {
     [uuid()]: {
-        name: "All Task",
+        name: "Start",
         items: itemsFromBackend
     },
     [uuid()]: {
-        name: "To do",
+        name: "+25%",
         items: []
     },
     [uuid()]: {
-        name: "In Progress",
+        name: "+50%",
         items: []
     },
     [uuid()]: {
-        name: "Done",
+        name: "+75%",
         items: []
-    }
+    },
+    [uuid()]: {
+        name: "Finished",
+        items: []
+    },
 };
 
 const onDragEnd = (result: DropResult, taskColumns: { [p: string]: any }, setTaskColumns: (arg0: any) => void) => {
