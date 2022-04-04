@@ -38,6 +38,7 @@
     "eject": "react-scripts eject",
     "generate-types": "./scripts/generate-types.sh"
   },
+  "homepage": "https://marcvdmade.github.io/stimpak-checklist/",
   "eslintConfig": {
     "extends": [
       "react-app",

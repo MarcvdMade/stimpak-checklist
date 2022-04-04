@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb2050ff.css",
-    "main.js": "/static/js/main.0d77aa6b.js",
-    "static/js/787.b32f15a3.chunk.js": "/static/js/787.b32f15a3.chunk.js",
-    "static/media/logo.png": "/static/media/logo.5f395a1b12c23ad6fc0f.png",
-    "static/media/economisch.png": "/static/media/economisch.f61edb622ecdd85edb92.png",
-    "static/media/betaalbareEnergie.png": "/static/media/betaalbareEnergie.9050bc7a602a68f716d6.png",
-    "static/media/klimaatActie.png": "/static/media/klimaatActie.4c65f89260629c153e38.png",
-    "static/media/gezondheid.png": "/static/media/gezondheid.e36fe4e5d80211f99b9a.png",
-    "index.html": "/index.html",
-    "static/media/close.svg": "/static/media/close.f150f19e5715097a46304163804d39fb.svg",
-    "static/media/dropdown.svg": "/static/media/dropdown.f42cdd174c1a5bd1396ab00f7d0cc1fb.svg",
-    "main.cb2050ff.css.map": "/static/css/main.cb2050ff.css.map",
-    "main.0d77aa6b.js.map": "/static/js/main.0d77aa6b.js.map",
-    "787.b32f15a3.chunk.js.map": "/static/js/787.b32f15a3.chunk.js.map"
+    "main.css": "/stimpak-checklist/static/css/main.cb2050ff.css",
+    "main.js": "/stimpak-checklist/static/js/main.3bdb4bb5.js",
+    "static/js/787.b32f15a3.chunk.js": "/stimpak-checklist/static/js/787.b32f15a3.chunk.js",
+    "static/media/logo.png": "/stimpak-checklist/static/media/logo.5f395a1b12c23ad6fc0f.png",
+    "static/media/economisch.png": "/stimpak-checklist/static/media/economisch.f61edb622ecdd85edb92.png",
+    "static/media/betaalbareEnergie.png": "/stimpak-checklist/static/media/betaalbareEnergie.9050bc7a602a68f716d6.png",
+    "static/media/klimaatActie.png": "/stimpak-checklist/static/media/klimaatActie.4c65f89260629c153e38.png",
+    "static/media/gezondheid.png": "/stimpak-checklist/static/media/gezondheid.e36fe4e5d80211f99b9a.png",
+    "index.html": "/stimpak-checklist/index.html",
+    "static/media/close.svg": "/stimpak-checklist/static/media/close.f150f19e5715097a46304163804d39fb.svg",
+    "static/media/dropdown.svg": "/stimpak-checklist/static/media/dropdown.f42cdd174c1a5bd1396ab00f7d0cc1fb.svg",
+    "main.cb2050ff.css.map": "/stimpak-checklist/static/css/main.cb2050ff.css.map",
+    "main.3bdb4bb5.js.map": "/stimpak-checklist/static/js/main.3bdb4bb5.js.map",
+    "787.b32f15a3.chunk.js.map": "/stimpak-checklist/static/js/787.b32f15a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb2050ff.css",
-    "static/js/main.0d77aa6b.js"
+    "static/js/main.3bdb4bb5.js"
   ]
 }
