@@ -17,7 +17,7 @@ const NavBar = () => {
         <div>
             <div className="nav-wrapper">
                 <div className="nav-content">
-                    <img id="logo" src={Logo} alt="stimular logo"/>
+                    <Link to="/"><img id="logo" src={Logo} alt="stimular logo"/></Link>
                     <img className="dropdown" src={Dropdown} alt="hamburger menu" onClick={changeShowSideBar} />
                 </div>
             </div>
