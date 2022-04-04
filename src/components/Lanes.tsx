@@ -1,9 +1,18 @@
 import React, {useState} from "react";
 import Card from "./Card";
-import {DragDropContext, Draggable, Droppable, DropResult} from 'react-beautiful-dnd';
+import {
+    DragDropContext,
+    Draggable,
+    DraggableStateSnapshot,
+    DraggingStyle,
+    Droppable,
+    DropResult,
+    NotDraggingStyle
+} from 'react-beautiful-dnd';
 import {v4 as uuid} from 'uuid'
 import {itemsFromBackend} from "../data/itemsFromBackend";
 import "../styles/Lanes.css"
+import confetti from "canvas-confetti";
 
 const columnsFromBackend = {
     [uuid()]: {
@@ -22,7 +31,7 @@ const columnsFromBackend = {
         name: "+75%",
         items: []
     },
-    [uuid()]: {
+    ['finish']: {
         name: "Finished",
         items: []
     },
@@ -65,6 +74,25 @@ const onDragEnd = (result: DropResult, taskColumns: { [p: string]: any }, setTas
 };
 
 const Lanes = () => {
+    function getStyle(style: DraggingStyle | NotDraggingStyle | undefined, snapshot: DraggableStateSnapshot) {
+        if (snapshot.isDropAnimating && snapshot.draggingOver === "finish") {
+            console.log(style)
+            confetti({
+                particleCount: 100,
+                angle: 60,
+                spread: 70,
+                origin: { x: 0, y: 0.9 }
+            });
+            confetti({
+                particleCount: 100,
+                angle: 120,
+                spread: 70,
+                origin: { x: 1, y: 0.9 }
+            });
+        }
+        return style;
+    }
+
     const [taskColumns, setTaskColumns] = useState(columnsFromBackend);
     return (
         <div className="context-wrapper">
@@ -102,7 +130,8 @@ const Lanes = () => {
                                                                         className="d-flex justify-content-center"
                                                                         ref={provided.innerRef}
                                                                         {...provided.draggableProps}
-                                                                        {...provided.dragHandleProps}>
+                                                                        {...provided.dragHandleProps}
+                                                                        style={getStyle(provided.draggableProps.style, snapshot)}>
                                                                         <Card
                                                                             color={item?.item?.color}
                                                                             headerTitle={item?.item?.headerTitle}
