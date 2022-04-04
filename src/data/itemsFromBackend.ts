@@ -11,8 +11,13 @@ export const itemsFromBackend = [
             headerTitle: "1. Gezondheid",
             imgPath: gezondheid,
             title: "Voorkom burnouts",
-            body: "Evalueer vakantie dagen",
+            body: "Zorg voor ontspanning",
             value: 50,
+            tasks: [
+                { text: "Evalueer het aantal vakantie dagen.", checked: false},
+                { text: "Organiseer minimaal 2 wekelijks een meeting over welzijn.", checked: false},
+                { text: "Zorg dat werknemers binnen maximaal x aantal uur overwerken per week.", checked: false}
+            ]
         }
     },
     {id: uuid(),
@@ -23,6 +28,11 @@ export const itemsFromBackend = [
             title: "Recycling",
             body: "Voorkom verspilling",
             value: 50,
+            tasks: [
+                { text: "Evalueer het aantal vakantie dagen.", checked: false},
+                { text: "Organiseer minimaal 2 wekelijks een meeting over welzijn.", checked: false},
+                { text: "Zorg dat werknemers binnen maximaal x aantal uur overwerken per week.", checked: false}
+            ]
         }
     },
     {id: uuid(),
@@ -33,6 +43,11 @@ export const itemsFromBackend = [
             title: "Eerlijke kilometer vergoeding",
             body: "Betaal een eerlijke vergoeding",
             value: 50,
+            tasks: [
+                { text: "Evalueer het aantal vakantie dagen.", checked: false},
+                { text: "Organiseer minimaal 2 wekelijks een meeting over welzijn.", checked: false},
+                { text: "Zorg dat werknemers binnen maximaal x aantal uur overwerken per week.", checked: false}
+            ]
         }
     },
     {id: uuid(),
@@ -43,6 +58,11 @@ export const itemsFromBackend = [
             title: "Duurzame energie",
             body: "Overgaan op gloeilampen",
             value: 50,
+            tasks: [
+                { text: "Evalueer het aantal vakantie dagen.", checked: false},
+                { text: "Organiseer minimaal 2 wekelijks een meeting over welzijn.", checked: false},
+                { text: "Zorg dat werknemers binnen maximaal x aantal uur overwerken per week.", checked: false}
+            ]
         }
     },
 ];

@@ -4,7 +4,7 @@ import Lanes from "../components/Lanes";
 export default function Home() {
     return (
         <div className="Home">
-            <Lanes />
+            <Lanes/>
         </div>
     )
 }
