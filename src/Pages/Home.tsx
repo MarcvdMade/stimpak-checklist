@@ -1,10 +1,11 @@
-import NavBar from "./components/NavBar";
 import React from "react";
+import Lanes from "../components/Lanes";
 
 export default function Home() {
     return (
         <div className="Home">
-            Home
+            <Lanes />
         </div>
     )
 }
+

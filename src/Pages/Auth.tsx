@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import { supabase } from './supabaseClient'
+import { supabase } from '../supabaseClient'
 import {Session} from "@supabase/supabase-js";
 
 export default function Auth() {
@@ -122,3 +122,4 @@ export default function Auth() {
         </div>
     )
 }
+
