@@ -13,7 +13,7 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <BrowserRouter
-        basename='https://marcvdmade.github.io/stimpak-checklist/'
+        basename={'https://marcvdmade.github.io/stimpak-checklist/'}
     >
         <NavBar/>
         <Routes>
