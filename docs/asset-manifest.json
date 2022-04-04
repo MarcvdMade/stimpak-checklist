@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/stimpak-checklist/static/css/main.cb2050ff.css",
-    "main.js": "/stimpak-checklist/static/js/main.2ab73924.js",
+    "main.js": "/stimpak-checklist/static/js/main.aedaa009.js",
     "static/js/787.b32f15a3.chunk.js": "/stimpak-checklist/static/js/787.b32f15a3.chunk.js",
     "static/media/logo.png": "/stimpak-checklist/static/media/logo.5f395a1b12c23ad6fc0f.png",
     "static/media/economisch.png": "/stimpak-checklist/static/media/economisch.f61edb622ecdd85edb92.png",
@@ -12,11 +12,11 @@
     "static/media/close.svg": "/stimpak-checklist/static/media/close.f150f19e5715097a46304163804d39fb.svg",
     "static/media/dropdown.svg": "/stimpak-checklist/static/media/dropdown.f42cdd174c1a5bd1396ab00f7d0cc1fb.svg",
     "main.cb2050ff.css.map": "/stimpak-checklist/static/css/main.cb2050ff.css.map",
-    "main.2ab73924.js.map": "/stimpak-checklist/static/js/main.2ab73924.js.map",
+    "main.aedaa009.js.map": "/stimpak-checklist/static/js/main.aedaa009.js.map",
     "787.b32f15a3.chunk.js.map": "/stimpak-checklist/static/js/787.b32f15a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb2050ff.css",
-    "static/js/main.2ab73924.js"
+    "static/js/main.aedaa009.js"
   ]
 }
