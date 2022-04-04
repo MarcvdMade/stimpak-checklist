@@ -2,15 +2,8 @@ import React, {useState} from "react";
 import Card from "./Card";
 import {DragDropContext, Draggable, Droppable, DropResult} from 'react-beautiful-dnd';
 import {v4 as uuid} from 'uuid'
+import {itemsFromBackend} from "../data/itemsFromBackend";
 import "../styles/Lanes.css"
-
-const itemsFromBackend = [
-    { id: uuid() },
-    { id: uuid() },
-    { id: uuid() },
-    { id: uuid() },
-    { id: uuid() },
-];
 
 const columnsFromBackend = {
     [uuid()]: {
@@ -110,7 +103,14 @@ const Lanes = () => {
                                                                         ref={provided.innerRef}
                                                                         {...provided.draggableProps}
                                                                         {...provided.dragHandleProps}>
-                                                                        <Card/>
+                                                                        <Card
+                                                                            color={item?.item?.color}
+                                                                            headerTitle={item?.item?.headerTitle}
+                                                                            imgPath={item?.item?.imgPath}
+                                                                            title={item?.item.title}
+                                                                            body={item?.item?.body}
+                                                                            value={item?.item?.value}
+                                                                        />
                                                                     </div>
                                                                 );
                                                             }}
