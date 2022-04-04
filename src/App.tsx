@@ -9,6 +9,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from './Pages/Home';
 import Auth from "./Pages/Auth";
 import NavBar from "./components/NavBar";
+import Account from "./Pages/Account";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
             <Route index element={<Home />} />
             <Route path="auth" element={<Auth />} />
+            <Route path="account" element={<Account />} />
         </Routes>
     </BrowserRouter>  );
 }
