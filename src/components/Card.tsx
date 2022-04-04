@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react';
 import "../styles/Card.css"
 
 import {
@@ -12,6 +11,7 @@ import {
 import Modal from "@mui/material/Modal"
 import confetti from "canvas-confetti";
 import {LinearProgressWithLabel} from "./LinearProgressWithLabel";
+import React, {useState} from "react";
 
 interface Card {
     color: any,
@@ -42,9 +42,6 @@ const Card = (props: Card) => {
     const [seeMore, setSeeMore] = useState(false)
     const [hover, setHover] = useState(false);
     const [openModal, setOpenModal] = useState(false);
-
-    useEffect(() => {
-    }, [])
 
     const handleSeeMore = () => {
         setSeeMore(!seeMore);
@@ -91,7 +88,6 @@ const Card = (props: Card) => {
             }
             setProgress(totalTrue / props.tasks.length * 100)
         }
-        console.log(item, progress, "AYY")
     }
 
     return (
@@ -153,7 +149,7 @@ const Card = (props: Card) => {
                             {props.tasks ? props.tasks.map((item, key) => {
                                     return (
                                         <FormControlLabel
-                                            control={<Checkbox onChange={($event) => handleCheckItem(item, $event)}
+                                            control={<Checkbox onChange={($event) => handleCheckItem(item, $event)} checked={item.checked}
                                                                color="success"/>} label={item.text}/>
                                     )
                                 })
