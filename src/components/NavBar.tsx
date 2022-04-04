@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { CSSTransition }  from 'react-transition-group';
 import '../styles/NavBar.css';
 
@@ -7,11 +7,21 @@ import Logo from '../img/logo.png';
 import Dropdown from '../svg/dropdown.svg';
 import Close from '../svg/close.svg';
 import {Link} from "react-router-dom";
+import {supabase} from "../supabaseClient";
+import {Session} from "@supabase/supabase-js";
 
 const NavBar = () => {
     const [showSideBar, setShowSideBar] = React.useState(false);
     const changeShowSideBar = () => setShowSideBar(!showSideBar);
+    const [session, setSession] = useState<Session | null>(null)
 
+    useEffect(() => {
+        setSession(supabase.auth.session())
+
+        supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+        });
+    }, []);
 
     return (
         <div>
@@ -30,7 +40,10 @@ const NavBar = () => {
                     <img className="close" onClick={changeShowSideBar} src={Close} alt="close menu" />
                     <nav>
                         <div>
-                            <Link to="/auth"><button className="sidebar-button">Mijn Profiel</button></Link>
+                            {session ?
+                                <Link to="/account"><button className="sidebar-button">Mijn Profiel</button></Link> :
+                                <Link to="/auth"><button className="sidebar-button">Sign in</button></Link>
+                            }
                         </div>
                         <div>
                             <Link to="/"><button className="sidebar-button">Mijn bord</button></Link>
