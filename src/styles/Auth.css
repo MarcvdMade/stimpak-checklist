@@ -87,3 +87,7 @@
     border-radius: 20px;
     padding: 10px;
 }
+
+::placeholder {
+    color: var(--custom-white);
+}

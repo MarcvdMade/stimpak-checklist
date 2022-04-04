@@ -3,6 +3,7 @@ import { supabase } from '../supabaseClient'
 import {Session} from "@supabase/supabase-js";
 import '../styles/Auth.css';
 import Logo from '../img/logo.png';
+import { userInfo } from 'os';
 
 export default function Auth() {
     const [loading, setLoading] = useState(false)
@@ -20,7 +21,7 @@ export default function Auth() {
         supabase.auth.onAuthStateChange((_event, session) => {
             setSession(session)
         })
-    }, [])
+    })
 
     const handleSignOut = async () => {
         setLoading(true)
@@ -51,8 +52,8 @@ export default function Auth() {
     const handleSignIn = async () => {
         setLoading(true)
         const { user, session, error } = await supabase.auth.signIn({
-            email,
-            password
+            email: email2,
+            password: password2
         });
         if (error) {
             alert(error.message);
@@ -66,7 +67,10 @@ export default function Auth() {
     return (
         <div className='auth-page'>
             {session ?
-                <button className='logout-btn' onClick={handleSignOut}>log out</button> :
+                <div>
+                    <p>Ingelogd als {session.user?.email}</p>
+                    <button className='logout-btn' onClick={handleSignOut}>Uitloggen</button>
+                </div> :
                 <div>
                     {loading ? (
                         'Loading'
@@ -94,7 +98,7 @@ export default function Auth() {
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
                                         <button className="button block" aria-live="polite">
-                                            Sign in
+                                            Registreren
                                         </button>
                                     </form>
                                 ) : (
@@ -118,7 +122,7 @@ export default function Auth() {
                                             onChange={(e) => setPassword2(e.target.value)}
                                         />
                                         <button className="button block" aria-live="polite">
-                                            Log in
+                                            Inloggen
                                         </button>
                                     </form>
                                 )
