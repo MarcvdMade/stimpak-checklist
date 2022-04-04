@@ -4,3 +4,11 @@
     --custom-red: #cc0000;
     --custom-white: #f1f1f1;
   }
+
+.main-color {
+    color: var(--main);
+}
+
+.secondary-color {
+    color: var(--secondary);
+}

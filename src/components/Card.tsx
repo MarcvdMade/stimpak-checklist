@@ -1,8 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "../styles/Card.css"
 
-import {Box, LinearProgress, LinearProgressProps, Typography} from "@mui/material";
+import {
+    Box,
+    Checkbox,
+    FormControlLabel,
+    FormGroup,
+    Typography,
+    Fade
+} from "@mui/material";
 import Modal from "@mui/material/Modal"
+import confetti from "canvas-confetti";
+import {LinearProgressWithLabel} from "./LinearProgressWithLabel";
 
 interface Card {
     color: any,
@@ -11,6 +20,7 @@ interface Card {
     title: any,
     body?: String,
     value?: any
+    tasks?: any[]
 }
 
 const style = {
@@ -18,26 +28,34 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 600,
     bgcolor: 'background.paper',
     border: '2px solid #000',
+    borderRadius: 5,
     boxShadow: 24,
     p: 4,
 };
 
 
 const Card = (props: Card) => {
-    const [progress, setProgress] = useState(60)
+    const [progress, setProgress] = useState(0)
     const [seeMore, setSeeMore] = useState(false)
     const [hover, setHover] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+
+    useEffect(() => {
+    }, [])
 
     const handleSeeMore = () => {
         setSeeMore(!seeMore);
     }
 
     const handleOpenModal = () => {
-        setOpenModal(!openModal);
+        setOpenModal(true);
+    }
+
+    const handleCloseModal = () => {
+        setOpenModal(false)
     }
 
     const handleMouseIn = () => {
@@ -48,6 +66,33 @@ const Card = (props: Card) => {
         setHover(false);
     }
 
+    const handleCheckItem = (item: any, event: React.ChangeEvent<HTMLInputElement>) => {
+        item.checked = event.target.checked
+        let totalTrue = 0;
+        if (props.tasks && props.tasks.length > 0) {
+            props?.tasks?.map((task) => {
+                if (task.checked == true) {
+                    totalTrue++
+                }
+            })
+            if (totalTrue == props.tasks.length) {
+                confetti({
+                    particleCount: 100,
+                    angle: 60,
+                    spread: 70,
+                    origin: { x: 0, y: 0.9 }
+                });
+                confetti({
+                    particleCount: 100,
+                    angle: 120,
+                    spread: 70,
+                    origin: { x: 1, y: 0.9 }
+                });
+            }
+            setProgress(totalTrue / props.tasks.length * 100)
+        }
+        console.log(item, progress, "AYY")
+    }
 
     return (
         <div className="card" id="card"
@@ -63,7 +108,7 @@ const Card = (props: Card) => {
                     </h5>
                 </div>
                 <Box sx={{width: '100%'}}>
-                    <LinearProgressWithLabel color="success" value={props.value}/>
+                    <LinearProgressWithLabel color="success" value={progress}/>
                 </Box>
                 {
                     seeMore ?
@@ -94,33 +139,37 @@ const Card = (props: Card) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 open={openModal}
+                onClose={handleCloseModal}
             >
-                <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{mt: 2}}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
-                </Box>
+                <Fade in={openModal}>
+                    <Box sx={style}>
+                        <Typography id="modal-modal-title" variant="h4" component="h2" align={"center"}>
+                            {props.title}
+                        </Typography>
+                        <Typography variant="h6" component="h6" align={"center"}>
+                            {props.body}
+                        </Typography>
+                        <FormGroup style={{marginTop: 10, display: "flex", alignContent: "center"}}>
+                            {props.tasks ? props.tasks.map((item, key) => {
+                                    return (
+                                        <FormControlLabel
+                                            control={<Checkbox onChange={($event) => handleCheckItem(item, $event)}
+                                                               color="success"/>} label={item.text}/>
+                                    )
+                                })
+                                :
+                                <Typography variant="h5" component="h6" align={"center"}>
+                                    No tasks present
+                                </Typography>}
+                        </FormGroup>
+                        <Box sx={{width: '100%', marginTop: 5}}>
+                            <LinearProgressWithLabel color="success" value={progress}/>
+                        </Box>
+                    </Box>
+                </Fade>
             </Modal>
         </div>
     )
-}
-
-function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
-    return (
-        <Box sx={{display: 'flex', alignItems: 'center', flexDirection: "column"}}>
-            <Box sx={{width: '100%', mr: 1}}>
-                <LinearProgress variant="determinate" style={{height: "15px", borderRadius: "10px"}} {...props} />
-            </Box>
-            <Box sx={{minWidth: 35, height: 20}}>
-                <Typography variant="body2" color="text.secondary">{`${Math.round(
-                    props.value,
-                )}%`}</Typography>
-            </Box>
-        </Box>
-    );
 }
 
 export default Card;

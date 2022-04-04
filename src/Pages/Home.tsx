@@ -13,7 +13,7 @@ export default function Home() {
 
     return (
         <div className="Home">
-            { questionsOpen ? <Questions active={(isClosed: boolean) => closeModal(isClosed)}/> : <Lanes /> }
+          { questionsOpen ? <Questions active={(isClosed: boolean) => closeModal(isClosed)}/> : <Lanes /> }
         </div>
     )
 }
