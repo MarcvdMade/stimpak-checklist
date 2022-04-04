@@ -12,7 +12,9 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+        basename='https://marcvdmade.github.io/stimpak-checklist/'
+    >
         <NavBar/>
         <Routes>
             <Route index element={<Home />} />
